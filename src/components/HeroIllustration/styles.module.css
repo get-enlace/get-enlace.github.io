@@ -1,0 +1,104 @@
+/**
+ * Colors echo enlace-ui's own palette (packages/enlace-ui/src/styles.css)
+ * and the org's brand mark (.github/brand/svgs/icon-full-100.svg) — same
+ * node/connection/mapping-dot language, generated rather than a literal
+ * screenshot of the app.
+ */
+.wrapper {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.6;
+
+  /* Theme-adaptive: the canvas surface itself. Border is deliberately
+     much darker than the fill — at this component's 0.6 opacity, over a
+     near-white page, anything close to --hero-node-fill's own lightness
+     washes out to invisible. */
+  --hero-node-fill: #f6f7f8;
+  --hero-node-border: #9aa0a6;
+  --hero-line: #a3a7ad;
+  --hero-grid-dot: #d8dade;
+
+  /* Fixed brand accents — same method-badge colors the real app uses in
+     both themes, since enlace-ui itself is dark-only and these are its
+     one true palette, not something that adapts. */
+  --hero-post: #49cc90;
+  --hero-patch: #50e3c2;
+  --hero-map: #61affe;
+  --hero-key: #9aa0a6;
+}
+
+[data-theme='dark'] .wrapper {
+  --hero-node-fill: #202124;
+  --hero-node-border: #3b3b3f;
+  --hero-line: #46484d;
+  --hero-grid-dot: #2a2b2e;
+}
+
+.svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.node {
+  fill: var(--hero-node-fill);
+  stroke: var(--hero-node-border);
+  stroke-width: 1.5;
+}
+
+.badgeText {
+  fill: #fff;
+  font: 700 11px/1 var(--ifm-font-family-base);
+  letter-spacing: 0.03em;
+}
+
+.line {
+  fill: none;
+  stroke: var(--hero-line);
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.mapLine {
+  fill: none;
+  stroke: var(--hero-map);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-dasharray: 2 6;
+}
+
+.dotSource {
+  fill: var(--hero-post);
+}
+
+.dotTarget {
+  fill: var(--hero-map);
+}
+
+.grid {
+  fill: var(--hero-grid-dot);
+}
+
+.keyShackle {
+  fill: none;
+  stroke: var(--hero-key);
+  stroke-width: 2.25;
+  stroke-linecap: round;
+}
+
+.keyBody {
+  fill: var(--hero-node-fill);
+  stroke: var(--hero-key);
+  stroke-width: 2.25;
+}
+
+.tether {
+  fill: none;
+  stroke: var(--hero-key);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-dasharray: 1 4;
+  opacity: 0.8;
+}
