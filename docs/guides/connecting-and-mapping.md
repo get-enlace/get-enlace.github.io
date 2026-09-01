@@ -21,6 +21,10 @@ You can connect nodes purely for sequencing — e.g. "delete this order
 before creating its replacement" — even when no field actually needs a
 value from the earlier one.
 
+Click a connector to select it, then press Delete/Backspace to remove
+it — same as removing a node. A field mapping isn't removed this way;
+clear it from the field's own inspector control instead.
+
 ## Pull in a value: map a field
 
 Open a node's inspector and, on the field you want to fill in, choose

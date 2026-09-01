@@ -24,6 +24,10 @@ customer (**A**), then updating that customer and creating a product at
 the same time (**B** and **C**, independent of each other), then placing
 an order that needs data from **A and C, but not B**.
 
+The sidebar groups operations by their OpenAPI tag (Customers, Products,
+Orders), so you'll find each one under its resource rather than one long
+flat list.
+
 1. Drag onto the canvas: `POST /customers` (A), `PATCH /customers/{id}`
    (B), `POST /products` (C), `POST /orders` (D).
 2. Fill in A's `name`/`email` and C's `name`/`price` with any values.

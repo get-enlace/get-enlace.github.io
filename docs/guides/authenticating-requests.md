@@ -4,10 +4,10 @@ sidebar_position: 3
 
 # Authenticate your requests
 
-Open the **Credentials** drawer to create a credential, then attach it to
-a node from that node's inspector. If your spec declares security
-schemes, you won't start from a blank form — look under "Declared in
-spec" first.
+Open the **Settings** menu (the gear icon in the header) and choose
+**Credentials** to create a credential, then attach it to a node from
+that node's inspector. If your spec declares security schemes, you won't
+start from a blank form — look under "Declared in spec" first.
 
 ## Using what the spec already declares
 
@@ -37,21 +37,50 @@ with which spec scheme it came from:
 | Send a username and password | **Basic** |
 | Send an API key in a header or query param | **API Key** |
 | Authenticate service-to-service, no human involved | **OAuth2 (Client Credentials)** |
-| Exchange a user's own username/password for a token | **OAuth2 (Password)** |
-| Log in through a third-party provider (GitHub, Google, SSO, MFA) | **Popup Login** |
+| Exchange a user's own username/password for a token | **OAuth2 (Password)** — legacy, see below |
+| Reuse a login you already have (GitHub, Google, SSO, MFA) | **Cookie (session)** |
 
 See [Credential Types](../reference/credential-types.md) for exactly what
 each one needs and how it's attached to a request.
 
-## Handling a login you can't do with a token
+## Verifying an OAuth2 credential
+
+For either OAuth2 type, Save is labeled **Verify & Save**: before the
+credential is actually saved, Enlace fetches a real token from the
+`tokenUrl` you gave it. If that fetch fails, you get the error inline
+and nothing is saved — you find out your token URL or secret is wrong at
+configuration time, not on your first run.
+
+If your token endpoint expects the client ID/secret sent as an
+`Authorization: Basic` header rather than in the request body (or vice
+versa), pick the matching **client auth method** on the credential form.
+It only affects the *token* request — the actual API call downstream
+always just gets a `Bearer` header with whatever token came back.
+
+## Revealing a secret you typed
+
+Every secret field (token, password, client secret, API key) is masked
+by default. Click the eye icon next to it while editing to reveal what
+you typed, in case you need to double check it — this only works on the
+form you're actively filling in. Once a credential is saved, its card
+always shows the value masked; there's no reveal on a saved card.
+
+## Reusing a login you can't do with a token
 
 If the target API expects a real login — GitHub, Google, an SSO screen,
-anything that needs a human to click through pages on another origin —
-use **Popup Login**. Attaching it to a node opens a real browser popup
-where you log in normally; Enlace never sees what happens inside it. Once
-you close the popup, the request goes out with your browser's own cookie
-jar attached, the same way it would if you'd logged into the target site
-directly in that tab.
+anything a human has to click through on another origin — use a
+**Cookie (session)** credential. It doesn't inject anything into the
+request itself; instead, it tells Enlace to send the request with your
+browser's own cookie jar attached (`credentials: 'include'`), the same
+way a request would behave if you'd loaded the target site directly in
+that tab.
+
+You still have to actually log in yourself — in any tab of the same
+browser, before running the chain, using whatever login flow the target
+requires. Enlace never sees that login or the cookie it sets. If you
+gave the credential a login URL, its card offers a link that opens it in
+a new tab as a convenience — Enlace doesn't open or drive that page
+itself.
 
 This only works if the target API's CORS policy allows credentialed
 cross-origin requests — same requirement as everything else below.
@@ -60,8 +89,9 @@ cross-origin requests — same requirement as everything else below.
 
 - Check the node actually has a credential attached — an empty
   credential dropdown sends the request with nothing.
-- For Popup Login, confirm you completed the login in the popup before
-  running — closing it without logging in leaves no cookie to send.
+- For a Cookie credential, confirm you're actually logged into the target
+  in this browser before running — Enlace doesn't check for you, it just
+  attaches whatever cookie jar you already have.
 - For either OAuth2 type, Enlace fetches and caches a token from
   `tokenUrl` before the real request — if that first fetch fails, the
   actual request never had a valid token to attach.
@@ -71,7 +101,7 @@ cross-origin requests — same requirement as everything else below.
 - Credentials live in your browser's memory for the session only. They're
   never sent to or stored by the adapter, and refreshing the page clears
   them.
-- The debug pane redacts secrets — the `Authorization` header's value,
+- The Results pane redacts secrets — the `Authorization` header's value,
   and, for an API key sent as a query param, the key itself in the
   logged URL. An API key sent as a *header* (like the sample API's
   `X-API-Key`) is shown as-is, since it isn't the `Authorization` header —
