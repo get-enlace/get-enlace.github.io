@@ -57,3 +57,16 @@ extra structure the form can't represent, or a mapping the flat form has
 nowhere to put — you'll get a warning before anything is discarded.
 Invalid JSON blocks the switch outright, so you can't accidentally lose
 your edits to a typo.
+
+## Uploading a file
+
+If an operation's request body is `multipart/form-data` rather than
+JSON — a file upload endpoint — the field for it appears as a file
+picker in the form view instead of a text input. Click it to choose a
+file from disk.
+
+A file can't be represented as JSON, so these operations skip the
+Raw/Form toggle entirely and stay in form mode — there's nothing to
+switch to. Everything else about the form (mapping other fields from an
+earlier step's response, static values alongside the file) works the
+same as any other body.

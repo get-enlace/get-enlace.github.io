@@ -58,29 +58,29 @@ const features: Feature[] = [
       <>
         Bearer tokens, API keys, and OAuth2 credentials live in browser
         memory for the session only — never sent to or stored by the
-        adapter, and redacted in the debug pane.
+        adapter, and redacted in the Results pane.
       </>
     ),
   },
   {
-    icon: '🧩',
-    title: 'Thin, symmetric adapters',
+    icon: '🐞',
+    title: 'Step through a chain like a debugger',
     description: (
       <>
-        Each adapter just serves the OpenAPI document and the UI's static
-        bundle. Nothing else varies by language — Express, NestJS, and
-        ASP.NET Core today.
+        Arm a breakpoint on any connector and hit Debug instead of Run —
+        inspect each request before it fires, then Continue, Step, or
+        Stop, without the rest of the chain losing its concurrency.
       </>
     ),
   },
   {
-    icon: '🧭',
-    title: 'Map fields from any ancestor',
+    icon: '💾',
+    title: 'Save and share a workflow',
     description: (
       <>
-        Connections set order; mappings set data source — independently.
-        A field can be mapped from any upstream node in the chain, not
-        just the one directly before it.
+        Export a chain to a portable <code>.enlace</code> file — with or
+        without credentials, and password-encrypted when it carries real
+        secrets — then hand it to a teammate or check it into a repo.
       </>
     ),
   },

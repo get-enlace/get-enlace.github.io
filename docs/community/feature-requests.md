@@ -25,15 +25,17 @@ own repo instead
 A few things Enlace doesn't do today, so you don't need to file these —
 just 👍 or comment on the existing conversation:
 
-- **Persistence.** Workflows and credentials live in browser memory only
-  and reset on refresh — nothing is saved between sessions.
+- **Automatic persistence.** Workflows and credentials live in browser
+  memory only and reset on refresh — nothing is saved between sessions
+  on its own. [Export a `.enlace` file](../guides/sharing-a-workflow.md)
+  first if you want to keep or share one; there's no auto-save.
 - **Drag-connect between fields on the canvas.** Field mapping goes
   through the node inspector's picker, or a tag in Raw JSON mode — not a
   direct drag between two fields.
-- **Full OAuth2 `authorization_code` support.** Only
-  [Popup Login](../guides/authenticating-requests.md#handling-a-login-you-cant-do-with-a-token)'s
-  cookie-based flow exists; Enlace doesn't yet capture a token from a
-  popup's own redirect.
+- **Full OAuth2 `authorization_code` support.** Only the
+  [Cookie credential](../guides/authenticating-requests.md#reusing-a-login-you-cant-do-with-a-token)'s
+  session-cookie flow exists; Enlace doesn't yet capture a token from a
+  login redirect.
 
 ## What's helpful to include
 
