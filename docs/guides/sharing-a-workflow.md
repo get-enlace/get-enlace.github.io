@@ -69,9 +69,10 @@ commits to anything.
 ## What's actually in the file
 
 A `.enlace` file is versioned JSON: the workflow's nodes, connections,
-and canvas positions, plus its credentials (stripped or full, per the
-export choice you made) and a hint about the spec it was built against
-(title, version, the operation IDs it uses). It's plain, readable JSON
+canvas positions, and any [groups](./grouping-nodes.md) (names,
+membership, collapsed state), plus its credentials (stripped or full,
+per the export choice you made) and a hint about the spec it was built
+against (title, version, the operation IDs it uses). It's plain, readable JSON
 for a Partial export; a Full-credential export wraps that same JSON in
 an encrypted envelope — nothing readable without the password.
 

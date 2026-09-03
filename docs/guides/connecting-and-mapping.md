@@ -60,3 +60,9 @@ too irregular for the form to represent — switch to
 
 Delete a node and anything that referenced it — connections, mappings —
 is removed automatically. Nothing is left silently dangling.
+
+## Keeping a busy canvas readable
+
+Once a chain has more than a few nodes, drag one on top of another to
+[group them](./grouping-nodes.md) into a single named, collapsible
+cluster — connections and mappings work exactly the same either way.
