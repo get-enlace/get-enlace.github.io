@@ -13,8 +13,8 @@ page is the exact reference: what each type needs and how it's attached.
 | Bearer | `Authorization: Bearer <token>` header | A token |
 | Basic | `Authorization: Basic <...>` header | Username, password |
 | API Key | A header, or a query param | Key name, value, and location (header/query) |
-| OAuth2 — Client Credentials | Bearer header, token fetched from `tokenUrl` first | Token URL, client ID, client secret, optional scope, client auth method |
-| OAuth2 — Password (legacy) | Bearer header, token fetched from `tokenUrl` first | Token URL, username, password, optional client ID/secret/scope/client auth method |
+| OAuth2 — Client Credentials | Bearer header, token fetched from `tokenUrl` first | Token URL, client ID, client secret, optional scope, client auth method, extra token params |
+| OAuth2 — Password (legacy) | Bearer header, token fetched from `tokenUrl` first | Token URL, username, password, optional client ID/secret/scope/client auth method/extra token params |
 | Cookie (session) | Nothing injected — browser's own cookie jar, via `credentials: 'include'` | Nothing required; an optional login URL for a convenience link |
 
 Both OAuth2 types cache the fetched token in memory and reuse it across
@@ -26,7 +26,12 @@ method** (Basic header vs. request body) controls how `clientId`/
 the downstream API call, which always just gets the resulting token as a
 `Bearer` header. It only applies when a client ID/secret is actually set
 — OAuth2 (Password) accepts a public client with neither, per RFC 6749
-§4.3, in which case there's nothing for it to apply to.
+§4.3, in which case there's nothing for it to apply to. **Extra token
+params** are arbitrary additional form fields sent on the token request
+only (an `audience` or `resource` claim, a vendor-specific parameter,
+…) — they never reach the downstream API call, and reserved fields
+(`grant_type`, `client_id`, `client_secret`, `scope`) can't be
+overridden through them.
 
 **Cookie (session)** is the exception to "attached as a value": it
 injects nothing into the request at all, and holds no secret of its own.

@@ -57,6 +57,13 @@ versa), pick the matching **client auth method** on the credential form.
 It only affects the *token* request — the actual API call downstream
 always just gets a `Bearer` header with whatever token came back.
 
+If the token endpoint needs something beyond the standard fields — an
+`audience` or `resource` claim, a vendor-specific parameter — add it
+under **Extra token params**. Each is sent as an additional form field on
+the token request only; `scope` has its own dedicated field above this,
+and reserved fields (`grant_type`, `client_id`, `client_secret`, `scope`,
+…) can't be overridden this way.
+
 ## Revealing a secret you typed
 
 Every secret field (token, password, client secret, API key) is masked

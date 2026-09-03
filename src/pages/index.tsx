@@ -146,6 +146,12 @@ function HomepageQuickstart() {
           </p>
         </div>
         <Tabs groupId="adapter">
+          <TabItem value="aspnetcore" label="ASP.NET Core">
+            <CodeBlock language="bash">dotnet add package Enlace.AspNetCore</CodeBlock>
+            <CodeBlock language="csharp">{`builder.Services.AddEnlace();
+// ...
+app.UseEnlace(); // mounts at /enlace by default`}</CodeBlock>
+          </TabItem>
           <TabItem value="express" label="Express">
             <CodeBlock language="bash">npm install @get-enlace/express</CodeBlock>
             <CodeBlock language="ts">{`import { enlace } from '@get-enlace/express';
@@ -159,11 +165,16 @@ app.use('/enlace', enlace({ spec: './openapi.json' }));`}</CodeBlock>
 @Module({ imports: [EnlaceModule.forRoot({ spec: './openapi.json' })] })
 export class AppModule {}`}</CodeBlock>
           </TabItem>
-          <TabItem value="aspnetcore" label="ASP.NET Core">
-            <CodeBlock language="bash">dotnet add package Enlace.AspNetCore</CodeBlock>
-            <CodeBlock language="csharp">{`builder.Services.AddEnlace();
-// ...
-app.UseEnlace(); // mounts at /enlace by default`}</CodeBlock>
+          <TabItem value="spring" label="Spring Boot">
+            <CodeBlock language="xml">{`<dependency>
+    <groupId>io.github.get-enlace</groupId>
+    <artifactId>enlace-spring-boot-starter</artifactId>
+    <version>0.0.1</version>
+</dependency>`}</CodeBlock>
+            <p>
+              That's it — autoconfiguration mounts <code>/enlace</code> for a
+              project already running springdoc conventionally.
+            </p>
           </TabItem>
         </Tabs>
         <div className={clsx(styles.buttons, 'margin-top--lg')}>
