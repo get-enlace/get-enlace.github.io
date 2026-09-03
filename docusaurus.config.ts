@@ -75,9 +75,10 @@ const config: Config = {
           label: 'Adapters',
           position: 'left',
           items: [
+            {label: 'ASP.NET Core', to: '/docs/adapters/aspnetcore'},
             {label: 'Express', to: '/docs/adapters/express'},
             {label: 'NestJS', to: '/docs/adapters/nestjs'},
-            {label: 'ASP.NET Core', to: '/docs/adapters/aspnetcore'},
+            {label: 'Spring Boot', to: '/docs/adapters/java'},
           ],
         },
         {
@@ -100,17 +101,18 @@ const config: Config = {
           items: [
             {label: 'Overview', to: '/docs/start-here/overview'},
             {label: 'Building a Chain', to: '/docs/guides/connecting-and-mapping'},
-            {label: 'Adapters', to: '/docs/adapters/express'},
+            {label: 'Adapters', to: '/docs/category/adapters'},
             {label: 'Reference', to: '/docs/reference/credential-types'},
           ],
         },
         {
           title: 'Repos',
           items: [
-            {label: 'enlace-ui', href: 'https://github.com/get-enlace/enlace-ui'},
-            {label: 'enlace-js', href: 'https://github.com/get-enlace/enlace-js'},
             {label: 'enlace-dotnet', href: 'https://github.com/get-enlace/enlace-dotnet'},
             {label: 'enlace-examples', href: 'https://github.com/get-enlace/enlace-examples'},
+            {label: 'enlace-java', href: 'https://github.com/get-enlace/enlace-java'},
+            {label: 'enlace-js', href: 'https://github.com/get-enlace/enlace-js'},
+            {label: 'enlace-ui', href: 'https://github.com/get-enlace/enlace-ui'},
           ],
         },
         {

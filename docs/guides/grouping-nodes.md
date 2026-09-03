@@ -29,7 +29,7 @@ checkbox, for when you're moving several nodes into the same group in a
 row. Cancel and the node just snaps to the nearest open space, like any
 other drop.
 
-![The Group nodes confirm dialog, with a name field and a "Don't ask when dropping into this group" checkbox](/img/screenshots/group-confirm-modal.jpg)
+![Dragging a node onto another opens the Group nodes confirm dialog, with a name field and a "Don't ask when dropping into this group" checkbox](/img/screenshots/group-confirm-modal.gif)
 
 ## Collapse and expand
 
@@ -42,8 +42,6 @@ frame's titlebar (or double-click the collapsed card later) to toggle:
   (method + path), with each member's own live run status shown inline.
   Member cards are hidden while collapsed — this list is the only place
   their status shows up until you expand again.
-
-![A collapsed group card listing three members with their methods, paths, and status icons](/img/screenshots/group-collapsed.jpg)
 
 Connections into or out of a grouped node are rewired to the group's
 own edge while it's collapsed, then snap back to the individual member
@@ -62,6 +60,8 @@ that node from the group — the node stays on the canvas, connections and
 mappings untouched. If removing a member would leave fewer than two
 nodes in the group, the group dissolves automatically rather than
 persisting with a single member.
+
+![Collapsing a group, then using each member's leave-group icon until the group dissolves back into individual, ungrouped cards](/img/screenshots/group-collapsed.gif)
 
 ## Ungroup
 

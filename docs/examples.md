@@ -5,11 +5,11 @@ sidebar_position: 4
 # Example Apps
 
 [`enlace-examples`](https://github.com/get-enlace/enlace-examples) has a
-runnable sample app per adapter — `express/`, `nest/`, `aspnetcore/` —
-each already wired up to Enlace, so you can see a real chain working
-before you touch your own API.
+runnable sample app per adapter — `aspnetcore/`, `express/`, `java/`,
+`nest/` — each already wired up to Enlace, so you can see a real chain
+working before you touch your own API.
 
-All three implement the exact same API (customers, products, orders —
+All four implement the exact same API (customers, products, orders —
 see [`CONTRACT.md`](https://github.com/get-enlace/enlace-examples/blob/main/CONTRACT.md)
 if you want the precise shape), so a chain you build against one works
 unmodified against any of the others — it's the same demo, just served
