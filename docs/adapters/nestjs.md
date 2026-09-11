@@ -56,9 +56,8 @@ const app = await NestFactory.create(AppModule);
 const config = new DocumentBuilder()
   .setTitle('My API')
   .setVersion('1.0.0')
-  // Enlace's chain executor sends requests straight to this URL — see
-  // "What Enlace needs from your spec" below.
-  .addServer('http://localhost:4000')
+  // No .addServer() call needed — see "What Enlace needs from your spec"
+  // below for when you'd actually want one.
   .build();
 
 EnlaceModule.setSpec(app, SwaggerModule.createDocument(app, config));
@@ -81,10 +80,15 @@ object.
 
 ### What Enlace needs from your spec
 
-Whatever produces it, one thing matters for a chain to actually run: the
-document's `servers[0].url` (`DocumentBuilder#addServer`, above) needs to
-be your API's real, reachable base URL — Enlace sends every request in
-the chain straight there from the browser.
+Nothing, for the base URL — the document's `servers[0].url`
+(`DocumentBuilder#addServer`) is optional. Without one (or with a relative
+one, e.g. `.addServer('/api')`), Enlace resolves requests against wherever
+the spec document itself was served from, so a chain runs correctly in
+every environment — local, staging, prod — with no per-environment
+`addServer()` calls. Only reach for an absolute `.addServer(...)` if you
+actually want Enlace hitting a *different* origin than this adapter (e.g.
+the API sits behind CORS on another host) — that's a deliberate opt-in,
+not something to set out of habit.
 
 An `operationId` on your routes (by default, `@nestjs/swagger` generates
 one per route as `ControllerName_methodName`, e.g. `CustomersController_findAll`)

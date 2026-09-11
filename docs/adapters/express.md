@@ -47,9 +47,8 @@ const spec = swaggerJsdoc({
   definition: {
     openapi: '3.0.3',
     info: { title: 'My API', version: '1.0.0' },
-    // Enlace's chain executor sends requests straight to this URL — see
-    // "What Enlace needs from your spec" below.
-    servers: [{ url: 'http://localhost:4000' }],
+    // No `servers` entry needed — see "What Enlace needs from your spec"
+    // below for when you'd actually want one.
   },
   apis: ['./routes/*.js'], // files with @openapi JSDoc blocks
 });
@@ -69,10 +68,14 @@ they're two independent consumers of the same spec object.
 
 ### What Enlace needs from your spec
 
-Whatever produces it, one thing matters for a chain to actually run:
-**`servers[0].url`** — Enlace sends every request in the chain straight to
-this URL from the browser, so it needs to be your API's real, reachable
-base URL, not a placeholder.
+Nothing, for the base URL — **`servers[0].url`** is optional. If your spec
+doesn't declare one (or its `servers` entry is a relative path, e.g.
+`/api`), Enlace resolves requests against wherever the spec document itself
+was served from, so a chain runs correctly in every environment — local,
+staging, prod — with no per-environment editing. Only set an absolute
+`servers[0].url` if you actually want Enlace hitting a *different* origin
+than this adapter (e.g. the API sits behind CORS on another host) — that's
+a deliberate opt-in, not something to set out of habit.
 
 `operationId` is optional — Enlace works fine without it, falling back to
 a synthetic `METHOD /path` label — but it's worth setting on operations
