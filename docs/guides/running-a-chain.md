@@ -31,6 +31,10 @@ sent and the response received.
 
 ![Run output with all four requests succeeding, one expanded to show its request and response](/img/screenshots/run-output-all-green.jpg)
 
+A [presets collection](./presets.md) (Wait/Assert) gets one row like any
+other node — expand it to see each preset inside it settle in order,
+underneath the collection's own row.
+
 Bearer/Basic credentials are redacted here (see
 [Authenticate your requests](./authenticating-requests.md#what-enlace-does--and-doesnt--protect)
 for exactly what is and isn't), so most runs are safe to leave open while

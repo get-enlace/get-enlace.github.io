@@ -110,6 +110,11 @@ function HomepageHeader() {
             to="/docs/start-here/overview">
             What is Enlace?
           </Link>
+          <Link
+            className="button button--secondary button--outline button--lg"
+            href="https://enlace-fastapi.onrender.com/enlace/">
+            🚀 Try it live
+          </Link>
         </div>
       </div>
     </header>

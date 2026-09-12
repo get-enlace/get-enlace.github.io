@@ -30,8 +30,8 @@ just 👍 or comment on the existing conversation:
   on its own. [Export a `.enlace` file](../guides/sharing-a-workflow.md)
   first if you want to keep or share one; there's no auto-save.
 - **Drag-connect between fields on the canvas.** Field mapping goes
-  through the node inspector's picker, or a tag in Raw JSON mode — not a
-  direct drag between two fields.
+  through typing `{{` in the field itself and picking a source in the
+  menu that opens — not a direct drag between two fields.
 - **Full OAuth2 `authorization_code` support.** Only the
   [Cookie credential](../guides/authenticating-requests.md#reusing-a-login-you-cant-do-with-a-token)'s
   session-cookie flow exists; Enlace doesn't yet capture a token from a
