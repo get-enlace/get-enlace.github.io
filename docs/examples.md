@@ -5,8 +5,8 @@ sidebar_position: 4
 # Example Apps
 
 [`enlace-examples`](https://github.com/get-enlace/enlace-examples) has a
-runnable sample app per adapter — `aspnetcore/`, `express/`, `java/`,
-`nest/`, `fastapi/` — each already wired up to Enlace, so you can see a
+runnable sample app per adapter — `aspnetcore/`, `express/`, `fastapi/`,
+`java/`, `nest/` — each already wired up to Enlace, so you can see a
 real chain working before you touch your own API.
 
 ## 🚀 Try it live — no setup at all

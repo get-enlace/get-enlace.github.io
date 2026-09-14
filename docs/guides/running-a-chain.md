@@ -50,8 +50,7 @@ those mappings need.
 
 ## The canvas locks while a run is in progress
 
-Field values, credentials, connections, and request mode can't be edited
-while a run is going — the inspector and canvas controls disable
+Field values, credentials, and connections can't be edited while a run is going — the inspector and canvas controls disable
 themselves, and even a direct store edit is rejected, so nothing can
 silently "take" without actually affecting the run in progress. You can
 still drag nodes around to rearrange the canvas; position was never part
@@ -64,6 +63,26 @@ point of failure. Anything already in flight in parallel with the failed
 step still finishes and reports its own result, since a request that's
 already gone out to your API can't be called back. Nothing downstream of
 the failure runs.
+
+## Rerunning after a failure: "Rerun failed"
+
+Once a run has left anything unfinished — a failure, or nodes that never
+got reached — a **Rerun failed** button appears next to Run and Debug.
+It skips every node that completed cleanly last time and picks back up
+from wherever the chain actually stopped, instead of firing the whole
+thing again from the top.
+
+This matters most partway through a long chain: fix whatever made step 6
+fail, hit **Rerun failed**, and steps 1–5 aren't re-sent — their prior
+responses are reused as-is, including for anything downstream mapping a
+field from them.
+
+Edit a node that already completed, though, and that safety net doesn't
+apply to it: Enlace compares each completed node's config against what
+it was at the start of the last run, and a change — to that node, or to
+anything upstream of it — makes it (and everything downstream of it)
+rerun fresh rather than reuse a result that config change might have
+invalidated. Only genuinely untouched nodes get skipped.
 
 ## A cycle in your chain
 

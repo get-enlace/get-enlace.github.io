@@ -41,6 +41,25 @@ app.use('/enlace', enlace({ spec: './openapi.json' }));
 ```
 
 </TabItem>
+<TabItem value="fastapi" label="FastAPI">
+
+```bash
+pip install enlace-fastapi
+```
+
+```python
+from fastapi import FastAPI
+from enlace_fastapi import enlace
+
+app = FastAPI()
+app.include_router(enlace(spec="./openapi.json"), prefix="/enlace")
+```
+
+Unlike the other adapters, `spec` is always explicit here — see
+[the FastAPI adapter page](../adapters/fastapi.md) for using
+`app.openapi()`'s own generated document instead of a file.
+
+</TabItem>
 <TabItem value="nestjs" label="NestJS">
 
 ```bash

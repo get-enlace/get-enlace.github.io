@@ -77,6 +77,7 @@ const config: Config = {
           items: [
             {label: 'ASP.NET Core', to: '/docs/adapters/aspnetcore'},
             {label: 'Express', to: '/docs/adapters/express'},
+            {label: 'FastAPI', to: '/docs/adapters/fastapi'},
             {label: 'NestJS', to: '/docs/adapters/nestjs'},
             {label: 'Spring Boot', to: '/docs/adapters/java'},
           ],
@@ -112,6 +113,7 @@ const config: Config = {
             {label: 'enlace-examples', href: 'https://github.com/get-enlace/enlace-examples'},
             {label: 'enlace-java', href: 'https://github.com/get-enlace/enlace-java'},
             {label: 'enlace-js', href: 'https://github.com/get-enlace/enlace-js'},
+            {label: 'enlace-python', href: 'https://github.com/get-enlace/enlace-python'},
             {label: 'enlace-ui', href: 'https://github.com/get-enlace/enlace-ui'},
           ],
         },

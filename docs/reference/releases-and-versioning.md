@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Releases & Versioning
 
-Enlace ships across three package ecosystems, each with a **dev** channel
+Enlace ships across four package ecosystems, each with a **dev** channel
 for fast iteration and a **prod** channel for real installs.
 
 | Package | Dev channel | Prod channel |
@@ -12,6 +12,7 @@ for fast iteration and a **prod** channel for real installs.
 | `Enlace.AspNetCore` | GitHub Packages NuGet | [NuGet.org](https://nuget.org) |
 | `@get-enlace/ui`, `@get-enlace/express`, `@get-enlace/nest` | GitHub Packages npm, `dev` dist-tag | [npmjs.org](https://npmjs.org), `latest` |
 | `enlace-spring-boot-starter` | GitHub Packages Maven | [Maven Central](https://central.sonatype.com/) |
+| `enlace-fastapi` | [TestPyPI](https://test.pypi.org) | [PyPI](https://pypi.org) |
 
 The dev channel exists for fast, low-ceremony iteration and isn't meant
 for production use — it updates on every merge to each repo's `main`
@@ -23,9 +24,9 @@ versioned release.
 
 Unless you're specifically tracking an in-progress feature, install from
 the **prod** channel — the plain `dotnet add package Enlace.AspNetCore`,
-`npm install @get-enlace/express`, `npm install @get-enlace/nest`, or the
-`enlace-spring-boot-starter` Maven dependency shown throughout these docs
-already point there by default.
+`npm install @get-enlace/express`, `npm install @get-enlace/nest`,
+`pip install enlace-fastapi`, or the `enlace-spring-boot-starter` Maven
+dependency shown throughout these docs already point there by default.
 
 ## Versioning
 
@@ -45,6 +46,9 @@ that repo) are the source of truth for what changed in a given version.
 - **Spring Boot** — actively developed, live in
   [`enlace-java`](https://github.com/get-enlace/enlace-java), published
   to Maven Central.
+- **FastAPI** — actively developed, live in
+  [`enlace-python`](https://github.com/get-enlace/enlace-python),
+  published to PyPI.
 
 Have an idea for what should come next? See
 [Feature Requests](../community/feature-requests.md).

@@ -127,7 +127,7 @@ breakpoint that was on it, same as connections and mappings referencing
 a deleted node.
 
 The canvas locks against edits — field values, credentials, connections,
-armed breakpoints, request mode — for as long as a run is paused, not
-just while it's actively firing requests. Node position is the one
+armed breakpoints — for as long as a run is paused, not just while it's
+actively firing requests. Node position is the one
 exception: you can still drag nodes around a paused canvas. Hit
 **Stop** (or let it run to completion) to unlock it again.

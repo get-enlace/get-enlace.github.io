@@ -163,6 +163,14 @@ app.UseEnlace(); // mounts at /enlace by default`}</CodeBlock>
 
 app.use('/enlace', enlace({ spec: './openapi.json' }));`}</CodeBlock>
           </TabItem>
+          <TabItem value="fastapi" label="FastAPI">
+            <CodeBlock language="bash">pip install enlace-fastapi</CodeBlock>
+            <CodeBlock language="python">{`from fastapi import FastAPI
+from enlace_fastapi import enlace
+
+app = FastAPI()
+app.include_router(enlace(spec="./openapi.json"), prefix="/enlace")`}</CodeBlock>
+          </TabItem>
           <TabItem value="nestjs" label="NestJS">
             <CodeBlock language="bash">npm install @get-enlace/nest</CodeBlock>
             <CodeBlock language="ts">{`import { EnlaceModule } from '@get-enlace/nest';
