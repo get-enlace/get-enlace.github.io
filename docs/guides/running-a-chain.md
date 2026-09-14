@@ -67,10 +67,18 @@ the failure runs.
 ## Rerunning after a failure: "Rerun failed"
 
 Once a run has left anything unfinished — a failure, or nodes that never
-got reached — a **Rerun failed** button appears next to Run and Debug.
-It skips every node that completed cleanly last time and picks back up
+got reached — a small **Rerun failed** icon appears right next to Run
+(hover it for the tooltip; it's icon-only, not a labeled button). It
+skips every node that completed cleanly last time and picks back up
 from wherever the chain actually stopped, instead of firing the whole
 thing again from the top.
+
+Debug gets the same treatment: a **Debug failed** icon appears next to
+it whenever Rerun failed does. It's the same resume behavior, but honors
+breakpoints for whatever's left — so you can jump straight to pausing
+right before the node that actually failed, instead of re-running the
+whole chain in Debug mode to get there. See
+[Debug a chain step by step](./debugging-a-chain.md#run-with-breakpoints).
 
 This matters most partway through a long chain: fix whatever made step 6
 fail, hit **Rerun failed**, and steps 1–5 aren't re-sent — their prior
@@ -83,6 +91,11 @@ it was at the start of the last run, and a change — to that node, or to
 anything upstream of it — makes it (and everything downstream of it)
 rerun fresh rather than reuse a result that config change might have
 invalidated. Only genuinely untouched nodes get skipped.
+
+The last run's result survives a page refresh too (this browser's own
+[autosave](./sharing-a-workflow.md#autosave-this-browser-remembers-your-last-session)),
+so **Rerun failed** is still there if you reload — it's only cleared once
+a different workflow loads.
 
 ## A cycle in your chain
 

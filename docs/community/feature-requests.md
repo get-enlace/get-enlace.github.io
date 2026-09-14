@@ -25,10 +25,11 @@ own repo instead
 A few things Enlace doesn't do today, so you don't need to file these —
 just 👍 or comment on the existing conversation:
 
-- **Automatic persistence.** Workflows and credentials live in browser
-  memory only and reset on refresh — nothing is saved between sessions
-  on its own. [Export a `.enlace` file](../guides/sharing-a-workflow.md)
-  first if you want to keep or share one; there's no auto-save.
+- **Multiple saved local workflows.** This browser's own
+  [autosave](../guides/sharing-a-workflow.md#autosave-this-browser-remembers-your-last-session)
+  keeps exactly one slot — loading a different workflow overwrites it.
+  [Export a `.enlace` file](../guides/sharing-a-workflow.md) if you want
+  to keep more than one around.
 - **Drag-connect between fields on the canvas.** Field mapping goes
   through typing `{{` in the field itself and picking a source in the
   menu that opens — not a direct drag between two fields.

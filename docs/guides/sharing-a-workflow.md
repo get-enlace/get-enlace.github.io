@@ -4,9 +4,10 @@ sidebar_position: 6
 
 # Save and share a workflow
 
-Everything you build lives only in that browser tab's memory — reload
-the page and it's gone. Export it to a `.enlace` file to keep it, hand it
-to a teammate, or check it into a repo alongside the API it exercises.
+This browser already remembers your last session on its own — see
+[Autosave](#autosave-this-browser-remembers-your-last-session) below.
+Export to a `.enlace` file when you want to actually *keep* a copy, hand
+it to a teammate, or check it into a repo alongside the API it exercises.
 
 Open the **Settings** menu (the gear icon in the header) for both
 **Export** and **Import**.
@@ -80,3 +81,35 @@ A file exported by an older Enlace build, from before password
 encryption existed, may still carry secrets in plain text. Importing one
 of those surfaces a loud one-time warning that it was never encrypted,
 rather than treating it like a normal Partial import.
+
+## Autosave: this browser remembers your last session
+
+Separately from exporting, Enlace also saves your work to this
+browser's own local storage (IndexedDB) as you go — a refresh or an
+accidentally-closed tab doesn't lose your canvas the way it used to.
+This is automatic and silent: there's no button for it, and reopening
+Enlace in this browser restores your last session without asking.
+
+What it saves is the same shape as a Partial export — nodes,
+connections, positions, groups, presets, the workflow's name, and
+credential *cards* (never secrets). If a restored credential needs a
+secret, you get the same "needs secrets" prompt an import shows — this
+is a convenience net, not a way around credentials never touching disk.
+
+The last run's result is saved too, specifically so
+[**Rerun failed**](./running-a-chain.md#rerunning-after-a-failure-rerun-failed)
+still has something to resume from after a refresh — written once the
+run actually finishes (not live, mid-run), and cleared the moment a
+different workflow loads.
+
+A few real limits worth knowing:
+
+- **One slot, not a list.** This isn't a way to keep several workflows
+  side by side locally — loading or importing a different one overwrites
+  what was here. Export a `.enlace` file first if you want to keep more
+  than one around.
+- **This browser only.** Nothing here follows you to a different browser,
+  device, or even a different profile in the same browser — for that,
+  export and share the file.
+- **Canvas pan/zoom position and breakpoints aren't included** — those
+  reset on reload even though everything else comes back.

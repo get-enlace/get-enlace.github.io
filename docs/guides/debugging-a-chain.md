@@ -36,6 +36,13 @@ A paused node's fully-resolved request — the same resolution a real fire
 would produce — is shown as a **preview**, marked "resolved, not yet
 sent," so you can check exactly what's about to go out before it does.
 
+If a run left something unfinished, a small **Debug failed** icon shows
+up next to Debug too — same "skip what already succeeded" resume as
+[Rerun failed](./running-a-chain.md#rerunning-after-a-failure-rerun-failed),
+but honoring breakpoints for the rest, so you can pause right before the
+node that actually failed instead of re-running the whole chain to get
+there.
+
 ## Continue, Step, and Stop
 
 Once a run is paused, the header's Run/Debug buttons are replaced by
