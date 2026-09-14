@@ -1,5 +1,5 @@
 /**
- * Colors echo enlace-ui's own palette (packages/enlace-ui/src/styles.css)
+ * Colors echo enlace's own palette (packages/ui/src/styles.css)
  * and the org's brand mark (.github/brand/svgs/icon-full-100.svg) — same
  * node/connection/mapping-dot language, generated rather than a literal
  * screenshot of the app.
@@ -21,7 +21,7 @@
   --hero-grid-dot: #d8dade;
 
   /* Fixed brand accents — same method-badge colors the real app uses in
-     both themes, since enlace-ui itself is dark-only and these are its
+     both themes, since enlace itself is dark-only and these are its
      one true palette, not something that adapts. */
   --hero-post: #49cc90;
   --hero-patch: #50e3c2;

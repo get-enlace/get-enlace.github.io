@@ -83,7 +83,7 @@ const config: Config = {
           ],
         },
         {
-          href: 'https://github.com/get-enlace/enlace-ui/issues/new?title=%5BFeature%5D%3A+&labels=enhancement',
+          href: 'https://github.com/get-enlace/enlace/issues/new?title=%5BFeature%5D%3A+&labels=enhancement',
           label: 'Request a Feature',
           position: 'left',
         },
@@ -114,7 +114,7 @@ const config: Config = {
             {label: 'enlace-java', href: 'https://github.com/get-enlace/enlace-java'},
             {label: 'enlace-js', href: 'https://github.com/get-enlace/enlace-js'},
             {label: 'enlace-python', href: 'https://github.com/get-enlace/enlace-python'},
-            {label: 'enlace-ui', href: 'https://github.com/get-enlace/enlace-ui'},
+            {label: 'enlace', href: 'https://github.com/get-enlace/enlace'},
           ],
         },
         {

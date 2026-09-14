@@ -49,7 +49,7 @@ npm run typecheck
 ## Keeping docs accurate
 
 This site documents behavior owned by other repos
-(`enlace-ui`, `enlace-js`, `enlace-dotnet`, `enlace-examples`). When one of
+(`enlace`, `enlace-js`, `enlace-dotnet`, `enlace-examples`). When one of
 those repos changes something documented here — a new adapter, a new
 credential type, a data-model change — update the corresponding page in
 this repo too. There's no automated sync; it's a manual step as part of

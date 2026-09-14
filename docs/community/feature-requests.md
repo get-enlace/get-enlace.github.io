@@ -9,7 +9,7 @@ is a GitHub issue — not a public roadmap doc.
 
 ## Where to file one
 
-File against **[`get-enlace/enlace-ui`](https://github.com/get-enlace/enlace-ui)**
+File against **[`get-enlace/enlace`](https://github.com/get-enlace/enlace)**
 regardless of which adapter you're using — it's where the canvas,
 execution engine, and credential handling actually live. The one
 exception is a request specific to how an adapter itself behaves (e.g.
@@ -18,7 +18,7 @@ own repo instead
 ([`enlace-js`](https://github.com/get-enlace/enlace-js) or
 [`enlace-dotnet`](https://github.com/get-enlace/enlace-dotnet)).
 
-**[Open a new issue on enlace-ui →](https://github.com/get-enlace/enlace-ui/issues/new?title=%5BFeature%5D%3A+&labels=enhancement)**
+**[Open a new issue on enlace →](https://github.com/get-enlace/enlace/issues/new?title=%5BFeature%5D%3A+&labels=enhancement)**
 
 ## Known gaps
 

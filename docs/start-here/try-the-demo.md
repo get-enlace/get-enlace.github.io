@@ -23,8 +23,8 @@ own bundled sample API — three cross-referencing resources (Customers,
 Products, Orders), no setup beyond cloning one repo.
 
 ```bash
-git clone https://github.com/get-enlace/enlace-ui.git
-cd enlace-ui
+git clone https://github.com/get-enlace/enlace.git
+cd enlace
 npm install
 npm start
 ```

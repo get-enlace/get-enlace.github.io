@@ -1,6 +1,6 @@
 /**
  * Enlace's own theme, not Docusaurus's default green. Colors are pulled
- * directly from enlace-ui's palette (packages/enlace-ui/src/styles.css)
+ * directly from enlace's palette (packages/ui/src/styles.css)
  * so the docs site and the actual canvas app read as the same product:
  *
  *   --color-bg / --color-panel-bg / --color-topbar-bg  (dark UI surfaces)

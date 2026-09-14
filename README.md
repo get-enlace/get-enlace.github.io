@@ -11,7 +11,7 @@ Built with [Docusaurus](https://docusaurus.io/).
   roadmap.
 
 Content here should stay traceable to what's actually built in
-[`enlace-ui`](https://github.com/get-enlace/enlace-ui),
+[`enlace`](https://github.com/get-enlace/enlace),
 [`enlace-js`](https://github.com/get-enlace/enlace-js),
 [`enlace-dotnet`](https://github.com/get-enlace/enlace-dotnet), and
 [`enlace-examples`](https://github.com/get-enlace/enlace-examples) — this
