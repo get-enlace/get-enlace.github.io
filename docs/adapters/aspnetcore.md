@@ -55,8 +55,6 @@ mapping fields, credentials — happens in the browser; see
 Want to see it running end to end first? There's a working
 [ASP.NET Core example app](../examples.md) you can run locally.
 
-## Status
+## Architecture
 
-Pre-release scaffold. Persistence (saving/reloading workflows and
-credentials) is out of scope for this phase — canvas state and
-credentials live in browser memory for the session only.
+The ASP.NET Core adapter is intentionally thin: it serves the static UI assets and resolves your OpenAPI document. All workflow execution happens client-side in the browser directly to your API endpoints, with local IndexedDB autosave.

@@ -98,8 +98,8 @@ function HomepageHeader() {
         </Heading>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
         <p>
-          Drag operations onto a canvas, wire one call's output into the
-          next call's input, and run the whole chain from the browser.
+          Drag endpoints onto a canvas, wire inputs to outputs, and run
+          multi-step API workflows concurrently — 100% in your browser.
         </p>
         <div className={styles.buttons}>
           <Link className="button button--primary button--lg" to="/docs/start-here/installing">
@@ -205,7 +205,7 @@ export default function Home(): ReactNode {
   return (
     <Layout
       title={siteConfig.title}
-      description="A visual, chained-execution canvas for any OpenAPI-documented API. Runs entirely in your browser.">
+      description="Turn your OpenAPI spec into an interactive visual execution graph. Drag endpoints, wire inputs to outputs, and run multi-step API workflows concurrently.">
       <HomepageHeader />
       <main>
         <HomepageFeatures />

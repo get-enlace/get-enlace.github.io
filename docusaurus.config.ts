@@ -6,7 +6,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'Enlace',
-  tagline: 'A visual, chained-execution canvas for any OpenAPI-documented API',
+  tagline: 'Turn your OpenAPI spec into an interactive visual execution graph',
   favicon: 'img/favicon-mono-white.svg',
 
   future: {

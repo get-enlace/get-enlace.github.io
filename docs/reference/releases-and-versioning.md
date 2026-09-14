@@ -37,10 +37,8 @@ that repo) are the source of truth for what changed in a given version.
 
 ## Status by adapter
 
-- **ASP.NET Core** — pre-release scaffold, live in
-  [`enlace-dotnet`](https://github.com/get-enlace/enlace-dotnet). See its
-  [adapter page](../adapters/aspnetcore.md#status) for what's in scope
-  today.
+- **ASP.NET Core** — actively developed, published to NuGet in
+  [`enlace-dotnet`](https://github.com/get-enlace/enlace-dotnet).
 - **Express, NestJS** — actively developed, both live in
   [`enlace-js`](https://github.com/get-enlace/enlace-js).
 - **Spring Boot** — actively developed, live in
